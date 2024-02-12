@@ -3,7 +3,7 @@ from django.db import models
 class User(models.Model):
     name = models.CharField(max_length=100, blank=False)
     email = models.EmailField(blank=False)
-    direction = models.CharField(max_length=100, blank=False)
+    direction = models.CharField(max_length=200, blank=False)
     date = models.DateField(auto_now=True)
 
     def __str__(self):
