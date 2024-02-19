@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import ImageField
 
 class User(models.Model):
     name = models.CharField(max_length=100, blank=False)
@@ -15,6 +16,7 @@ class Product(models.Model):
     description = models.TextField(blank=False)
     sum = models.IntegerField(blank=False)
     date = models.DateField(auto_now=True)
+    image = ImageField(upload_to='shopapp/images/', default=None, null=True, blank=True)
 
     def __str__(self):
         return f'Username: {self.name}, email: {self.email}'
