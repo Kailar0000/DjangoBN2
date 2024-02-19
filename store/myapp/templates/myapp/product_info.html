@@ -17,6 +17,11 @@
         {% if product.deleted %}
         <p>Product deleted</p>
         {% endif %}
+        {% if product.image %}
+        <img src="{{ product.image.url }}">
+        {% else %}
+        <p>No image uploaded for product</p>
+        {% endif %}
     </div>
     {% else %}
     <p>No data</p>
